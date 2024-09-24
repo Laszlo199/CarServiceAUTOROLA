@@ -9,12 +9,25 @@ namespace Infrastructure.Entity
 {
     public class CarEntity
     {
-        [Key]
-        public required string VIN { get; set; }
-        public required string Make { get; set; }
-        public required string Model { get; set; }
-        public required int Mileage { get; set; }
-        public required string Color { get; set; }
-        public required int CreatedAt { get; set; }
+       [Key]
+        public int Id { get; set; }
+
+        [Required]
+        public string VIN { get; set; }
+
+        [Required]
+        public string Make { get; set; }
+
+        [Required]
+        public string Model { get; set; }
+
+        [Required]
+        public int Mileage { get; set; }
+
+        [Required]
+        public string Color { get; set; }
+
+        [Required]
+        public int CreatedAt { get; set; }
     }
 }
