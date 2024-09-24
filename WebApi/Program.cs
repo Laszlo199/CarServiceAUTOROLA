@@ -7,26 +7,32 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Register services and repositories
 builder.Services.AddScoped<ICarService, CarService>();
 builder.Services.AddScoped<ICarRepository, CarRepository>();
 builder.Services.AddScoped<DBSeeder>();
-
-// Add DbContext
-builder.Services.AddDbContext<AppDbContext>(options => { options.UseSqlServer("Data Source = cars.db"); });
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseInMemoryDatabase("CarDatabase"));
 
 var app = builder.Build();
+
+// Seed the database
+void SeedDatabase(WebApplication app)
+{
+    using var scope = app.Services.CreateScope();
+    var dbSeeder = scope.ServiceProvider.GetRequiredService<DBSeeder>();
+    dbSeeder.SeedDevelopment();
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    SeedDatabase(app);
 }
 
 app.MapControllers();

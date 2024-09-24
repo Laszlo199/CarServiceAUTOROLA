@@ -15,5 +15,12 @@ namespace Infrastructure
         }
 
         public DbSet<CarEntity> Cars { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<CarEntity>()
+                .HasIndex(c => c.VIN)
+                .IsUnique();
+        }
     }
 }
