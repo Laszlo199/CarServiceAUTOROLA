@@ -18,7 +18,7 @@ builder.Services.AddScoped<ICarRepository, CarRepository>();
 builder.Services.AddScoped<DBSeeder>();
 
 // Add DbContext
-builder.Services.AddDbContext<AppDbContext>(options => { options.UseSqlServer("Data Source = cars.db"); });
+builder.Services.AddDbContext<AppDbContext>(options => { options.UseSqlServer("Data Source = CarDatabase.db"); });
 
 var app = builder.Build();
 

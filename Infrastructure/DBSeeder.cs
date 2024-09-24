@@ -30,7 +30,7 @@ namespace Infrastructure
                     Model = "Corolla",
                     Mileage = 30000,
                     Color = "Red",
-                    CreatedAt = DateTime.UtcNow
+                    CreatedAt = DateTime.Now
                 },
                 new CarEntity
                 {
@@ -39,16 +39,16 @@ namespace Infrastructure
                     Model = "Civic",
                     Mileage = 40000,
                     Color = "Blue",
-                    CreatedAt = DateTime.UtcNow
+                    CreatedAt = DateTime.Now
                 },
                 new CarEntity
                 {
                     VIN = "1HGCM82633A789012",
                     Make = "Ford",
                     Model = "Fusion",
-                    Mileage = 50000,
+                    Mileage = 40000,
                     Color = "Green",
-                    CreatedAt = DateTime.UtcNow
+                    CreatedAt = DateTime.Now
                 }
             };
         }
