@@ -1,4 +1,5 @@
 ﻿using Infrastructure.Entity;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,18 +10,15 @@ namespace Infrastructure
 {
     public class DBSeeder
     {
-        private readonly AppDbContext _context;
+        private readonly AppDbContext _ctx;
 
         public DBSeeder(AppDbContext context)
         {
-            _context = context;
+            _ctx = context;
         }
 
         public void SeedDevelopment()
         {
-            _context.Database.EnsureDeleted();
-            _context.Database.EnsureCreated();
-
             var cars = new List<CarEntity>
             {
                new CarEntity
@@ -51,6 +49,8 @@ namespace Infrastructure
                     CreatedAt = DateTime.Now
                 }
             };
+            _ctx.Cars.AddRange(cars);
+            _ctx.SaveChanges();
         }
     }
 }
