@@ -49,7 +49,7 @@ namespace WebApi.Controllers
         public async Task<IActionResult> DeleteCar(string vin)
         {
             var wasDeleted = await _carService.DeleteCar(vin);
-            if (wasDeleted is false)
+            if (!wasDeleted)
             {
                 return NotFound();
             }

@@ -14,12 +14,12 @@ namespace Application.Models
         [Required]
         public string Make { get; set; }
         [Required]
-        public  string Model { get; set; }
+        public string Model { get; set; }
         [Required]
-        public  int Mileage { get; set; }
+        public int Mileage { get; set; }
         [Required]
         public string Color { get; set; }
         [Required]
-        public  int CreatedAt { get; set; }
+        public int CreatedAt { get; set; }
     }
 }

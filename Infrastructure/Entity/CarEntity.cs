@@ -9,7 +9,7 @@ namespace Infrastructure.Entity
 {
     public class CarEntity
     {
-       [Key]
+        [Key]
         public int Id { get; set; }
 
         [Required]
