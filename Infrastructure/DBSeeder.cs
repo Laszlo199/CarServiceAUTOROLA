@@ -28,7 +28,7 @@ namespace Infrastructure
                     Model = "Corolla",
                     Mileage = 30000,
                     Color = "Red",
-                    CreatedAt = DateTime.Now
+                    CreatedAt = 2001
                 },
                 new CarEntity
                 {
@@ -37,7 +37,7 @@ namespace Infrastructure
                     Model = "Civic",
                     Mileage = 40000,
                     Color = "Blue",
-                    CreatedAt = DateTime.Now
+                    CreatedAt = 1991
                 },
                 new CarEntity
                 {
@@ -46,7 +46,7 @@ namespace Infrastructure
                     Model = "Fusion",
                     Mileage = 40000,
                     Color = "Green",
-                    CreatedAt = DateTime.Now
+                    CreatedAt = 2011
                 }
             };
             _ctx.Cars.AddRange(cars);

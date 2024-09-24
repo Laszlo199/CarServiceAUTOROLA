@@ -9,10 +9,10 @@ namespace Domain.IRepositories
 {
     public interface ICarRepository
     {
-        List<CarModel> GetAllCars();
-        CarModel GetCarByVinId(string vin);
-        CarModel AddCar(CarModel car);
-        CarModel UpdateCar(CarModel car);
-        CarModel DeleteCar(string vin);
+        Task<List<CarModel>> GetAllCars();
+        Task<CarModel> GetCarByVinId(string vin);
+        Task<CarModel> AddCar(CarModel car);
+        Task<CarModel> UpdateCar(CarModel car);
+        Task<bool> DeleteCar(string vin);
     }
 }

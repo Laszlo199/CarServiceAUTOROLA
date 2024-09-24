@@ -1,10 +1,13 @@
 ﻿using Application.Models;
 using Domain.IRepositories;
+using System.Threading.Tasks;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using Infrastructure.Entity;
 
 namespace Infrastructure.Repositories
 {
@@ -17,19 +20,37 @@ namespace Infrastructure.Repositories
             _ctx = context;
         }
 
-        public CarModel AddCar(CarModel car)
+        public async Task<CarModel> AddCar(CarModel car)
         {
-            throw new NotImplementedException();
+            var c = new CarEntity
+            {
+                VIN = car.VIN,
+                Make = car.Make,
+                Model = car.Model,
+                Mileage = car.Mileage,
+                Color = car.Color,
+                CreatedAt = car.CreatedAt
+            };
+            await _ctx.Cars.AddAsync(c);
+            await _ctx.SaveChangesAsync();
+            return car;
         }
 
-        public CarModel DeleteCar(string vin)
+        public async Task<bool> DeleteCar(string vin)
         {
-            throw new NotImplementedException();
+            var car = await _ctx.Cars.FirstOrDefaultAsync(c => c.VIN == vin);
+            if (car != null)
+            {
+                _ctx.Cars.Remove(car);
+                await _ctx.SaveChangesAsync();
+                return true;
+            }
+            return false;
         }
 
-        public List<CarModel> GetAllCars()
+        public async Task<List<CarModel>> GetAllCars()
         {
-            var cars = _ctx.Cars
+            var cars = await _ctx.Cars
                 .Select(c => new CarModel
                 {
                     VIN = c.VIN,
@@ -38,18 +59,41 @@ namespace Infrastructure.Repositories
                     Mileage = c.Mileage,
                     Color = c.Color,
                     CreatedAt = c.CreatedAt
-                }).ToList();
+                }).ToListAsync();
             return cars;
         }
 
-        public CarModel GetCarByVinId(string vin)
+        public async Task<CarModel> GetCarByVinId(string vin)
         {
-            throw new NotImplementedException();
+            var car = await _ctx.Cars
+                .Where(c => c.VIN == vin)
+                .Select(c => new CarModel
+                  {
+                       VIN = c.VIN,
+                       Make = c.Make,
+                       Model = c.Model,
+                       Mileage = c.Mileage,
+                       Color = c.Color,
+                       CreatedAt = c.CreatedAt
+                  }).FirstOrDefaultAsync();
+
+                return car;
         }
 
-        public CarModel UpdateCar(CarModel car)
+        public async Task<CarModel> UpdateCar(CarModel car)
         {
-            throw new NotImplementedException();
+            _ctx.Attach(new CarEntity
+            {
+                VIN = car.VIN,
+                Make = car.Make,
+                Model = car.Model,
+                Mileage = car.Mileage,
+                Color = car.Color,
+                CreatedAt = car.CreatedAt
+            }).State = EntityState.Modified;
+            await _ctx.SaveChangesAsync();
+
+            return car;
         }
     }
 }

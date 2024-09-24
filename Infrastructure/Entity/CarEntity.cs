@@ -15,6 +15,6 @@ namespace Infrastructure.Entity
         public required string Model { get; set; }
         public required int Mileage { get; set; }
         public required string Color { get; set; }
-        public required DateTime CreatedAt { get; set; }
+        public required int CreatedAt { get; set; }
     }
 }

@@ -9,10 +9,10 @@ namespace Application.IServices
 {
     public interface ICarService
     {
-        List<CarModel> GetAllCars();
-        CarModel GetCarByVin(string vin);
-        CarModel AddCar(CarModel car);
-        CarModel UpdateCar(CarModel car);
-        CarModel DeleteCar(string vin);
+        Task<List<CarModel>> GetAllCars();
+        Task<CarModel> GetCarByVin(string vin);
+        Task<CarModel> AddCar(CarModel car);
+        Task<CarModel> UpdateCar(CarModel car);
+        Task<bool> DeleteCar(string vin);
     }
 }

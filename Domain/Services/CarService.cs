@@ -17,30 +17,30 @@ namespace Domain.Services
         {
             _carRepository = carRepository;
         }
-        public CarModel AddCar(CarModel car)
+        public async Task<CarModel> AddCar(CarModel car)
         {
-            throw new NotImplementedException();
+            return await _carRepository.AddCar(car);
         }
 
-        public CarModel DeleteCar(string vin)
+        public async Task<bool> DeleteCar(string vin)
         {
-            throw new NotImplementedException();
+            return await _carRepository.DeleteCar(vin);
         }
 
-        public List<CarModel> GetAllCars()
+        public async Task<List<CarModel>> GetAllCars()
         {
             
-            return _carRepository.GetAllCars();
+            return await _carRepository.GetAllCars();
         }
 
-        public CarModel GetCarByVin(string vin)
+        public async Task<CarModel> GetCarByVin(string vin)
         {
-            throw new NotImplementedException();
+            return await _carRepository.GetCarByVinId(vin);
         }
 
-        public CarModel UpdateCar(CarModel car)
+        public async Task<CarModel> UpdateCar(CarModel car)
         {
-            throw new NotImplementedException();
+            return await _carRepository.UpdateCar(car);
         }
     }
 }
