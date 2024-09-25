@@ -4,6 +4,7 @@ using Domain.IRepositories;
 using Infrastructure.Repositories;
 using Infrastructure;
 using Microsoft.EntityFrameworkCore;
+using WebApi.Mappers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<ICarService, CarService>();
 builder.Services.AddScoped<ICarRepository, CarRepository>();
 builder.Services.AddScoped<DBSeeder>();
+builder.Services.AddScoped<CarsMapper>();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseInMemoryDatabase("CarDatabase"));
 

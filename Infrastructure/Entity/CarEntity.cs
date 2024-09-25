@@ -5,6 +5,7 @@ namespace Infrastructure.Entity
     public class CarEntity
     {
         [Key]
+        [Required]
         public int Id { get; set; }
 
         [Required]
@@ -23,6 +24,6 @@ namespace Infrastructure.Entity
         public string Color { get; set; }
 
         [Required]
-        public int CreatedAt { get; set; }
+        public DateTime CreatedAt { get; set; }
     }
 }

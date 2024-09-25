@@ -5,6 +5,7 @@ namespace Application.Models
     public class CarModel
     {
         [Required]
+        [Key]
         public string VIN { get; set; }
         [Required]
         public string Make { get; set; }
@@ -15,6 +16,6 @@ namespace Application.Models
         [Required]
         public string Color { get; set; }
         [Required]
-        public int CreatedAt { get; set; }
+        public DateTime CreatedAt { get; set; }
     }
 }

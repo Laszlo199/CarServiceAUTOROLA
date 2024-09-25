@@ -7,6 +7,6 @@
         public string Model { get; set; }
         public int Mileage { get; set; }
         public string Color { get; set; }
-        public int CreatedAt { get; set; }
+        public DateTime CreatedAt { get; set; }
     }
 }
