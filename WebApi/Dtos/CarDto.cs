@@ -5,6 +5,7 @@ namespace WebApi.Dtos
     public class CarDto
     {
         [Required]
+        [StringLength(17, MinimumLength =17, ErrorMessage = "VIN must be 17 characters long.")]
         public string VIN { get; set; }
         [Required]
         public string Make { get; set; }
