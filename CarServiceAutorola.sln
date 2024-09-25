@@ -27,6 +27,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A39B72A8-677B-4489-A178-DEF90B8C557B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarServiceAutorola.UnitTests", "CarServiceAutorola.UnitTests\CarServiceAutorola.UnitTests.csproj", "{9E67F0E8-D68D-4A1B-AF1B-F25FA18D2924}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +53,10 @@ Global
 		{F216E380-4DB1-417B-AE99-567430236D9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F216E380-4DB1-417B-AE99-567430236D9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F216E380-4DB1-417B-AE99-567430236D9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E67F0E8-D68D-4A1B-AF1B-F25FA18D2924}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E67F0E8-D68D-4A1B-AF1B-F25FA18D2924}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E67F0E8-D68D-4A1B-AF1B-F25FA18D2924}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E67F0E8-D68D-4A1B-AF1B-F25FA18D2924}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -61,6 +69,8 @@ Global
 		{0EDA378B-DD74-45A5-B2A4-FAF3547A0EF7} = {9C1F1F8C-24F0-428B-A481-119BE4CF2058}
 		{8474F303-0C5C-486F-81C2-DA2B95B3C345} = {39C33648-218F-40BB-AB45-16B6A1F85ED7}
 		{F216E380-4DB1-417B-AE99-567430236D9C} = {368FD94B-15C7-492B-BE0D-BEF84D39D76F}
+		{A39B72A8-677B-4489-A178-DEF90B8C557B} = {07193B5F-9621-49EF-A014-12C2ADFEE192}
+		{9E67F0E8-D68D-4A1B-AF1B-F25FA18D2924} = {A39B72A8-677B-4489-A178-DEF90B8C557B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F435DB08-D9BB-4D20-9EDF-2BC671D5C247}
