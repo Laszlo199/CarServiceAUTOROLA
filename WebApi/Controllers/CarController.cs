@@ -42,7 +42,7 @@ namespace WebApi.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateNewCar([Required][FromBody] CarDto car)
+        public async Task<IActionResult> CreateNewCar([Required] [FromBody] CarDto car)
         {
             var carModel = _carsMapper.MapToCarModel(car);
             var wasCreated = await _carService.AddCar(carModel);
@@ -65,7 +65,7 @@ namespace WebApi.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> UpdateCar([Required][FromBody] CarDto car)
+        public async Task<IActionResult> UpdateCar([Required] [FromBody] CarDto car)
         {
             var carModel = _carsMapper.MapToCarModel(car);
             var wasUpdated = await _carService.UpdateCar(carModel);
